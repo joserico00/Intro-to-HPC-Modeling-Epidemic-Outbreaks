@@ -1,0 +1,7 @@
+{
+  "groupA_R0": 2.4,
+  "groupB_R0": 2.5,
+  "threshold_formula": 0.6,
+  "p_fizzle_one_case": 0.316,
+  "observed_final_size": 8946
+}

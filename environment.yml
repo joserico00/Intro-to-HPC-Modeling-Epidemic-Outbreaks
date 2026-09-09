@@ -1,0 +1,9 @@
+name: epidemic-modeling
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.9
+  - numpy>=1.24
+  - matplotlib>=3.7
+  - jupyterlab>=4
+  - ipykernel
