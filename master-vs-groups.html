@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Master vs. simplified — Modeling Epidemic Outbreaks</title>
+<style>
+:root{color-scheme:light;--paper:#F6F7F5;--ink:#1F2933;--muted:#5B6772;--card:#FFF;
+ --line:#DCE1DF;--accent:#B3423A;--amber:#FFF7E0;
+ --mono:"Cascadia Code","SF Mono",Consolas,monospace;
+ --sans:-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+ --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+ font-family:var(--sans);line-height:1.5;font-size:15px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+header{background:var(--card);border-bottom:1px solid var(--line);padding:28px 0 20px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+ color:var(--accent);margin:0 0 8px}
+h1{font-family:var(--serif);font-size:clamp(23px,3.2vw,30px);margin:0 0 10px;font-weight:600}
+.lede{color:var(--muted);max-width:76ch;margin:0}
+.totals{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+.tot{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:9px 14px}
+.tot b{font-family:var(--mono);font-size:15px;display:block}
+.tot span{font-size:11.5px;color:var(--muted)}
+.tot.m{border-top:3px solid var(--ink)}.tot.a{border-top:3px solid var(--accent)}
+.tot.b{border-top:3px solid #33618F}
+.grid{display:grid;grid-template-columns:minmax(215px,1.3fr) 100px 1fr 1fr;gap:0 14px;
+ align-items:center;font-size:13.5px;margin-top:24px}
+.grid .head{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+ color:var(--muted);padding:6px 0;border-bottom:2px solid var(--line)}
+.row{display:contents;cursor:pointer}
+.row>div{padding:8px 0;border-bottom:1px solid var(--line)}
+.row:hover>div{background:#FBFCFB}
+.sect{font-weight:600}.sect small{display:block;font-weight:400;font-family:var(--mono);
+ font-size:10.5px;color:var(--muted)}
+.badge{font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:99px;color:#fff;white-space:nowrap}
+.bar{height:12px;border-radius:3px;min-width:2px;display:inline-block;vertical-align:middle}
+.bar.m{background:var(--ink)}.bar.a{background:var(--accent)}.bar.b{background:#33618F}
+.bw{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-left:7px}
+.absent{color:#C3CAC6;font-family:var(--mono);font-size:11px}
+.gl{display:block;margin:1px 0}
+.detail{grid-column:1/-1;background:var(--card);border:1px solid var(--line);
+ border-radius:0 0 10px 10px;border-top:none;padding:13px 18px;margin:0 0 8px;display:none;
+ color:var(--muted);max-width:none;font-size:13.5px}
+.detail.open{display:block}
+footer{margin:34px 0 44px;color:var(--muted);font-size:12.5px;font-family:var(--mono)}
+.row:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:800px){.grid{grid-template-columns:1fr 90px 1fr}.gcol,.head.hg{display:none}}
+</style></head><body>
+<header><div class="wrap">
+<p class="eyebrow">Intro to HPC Bootcamp · Modeling Epidemic Outbreaks</p>
+<h1>How detailed is the master? Section by section.</h1>
+<p class="lede">The thorough master is built and verified <b>first</b>; Group A
+(equations) and Group B (coin flips) are simplified copies, each keeping only its
+own method. Bars show markdown words per section; click a row for the reasoning.
+Gray rows never leave the master — the project lead's planning layer.</p>
+<div class="totals" id="totals"></div>
+</div></header>
+<main class="wrap">
+<div class="grid" id="grid">
+ <div class="head">Master section</div><div class="head">fate</div>
+ <div class="head">master depth</div><div class="head hg">in the group notebooks</div>
+</div>
+<footer>generated from the actual .ipynb files · companion: notebook-preview.html (read all three notebooks in the browser, outputs included)</footer>
+</main>
+<script>
+const D={"rows": [{"key": "1", "title": "Mentor alignment", "fate": "masteronly", "mw": 100, "aw": 0, "bw": 0, "note": "The approved question, learner outcome, and the misunderstanding to prevent (\u201cR\u2080 > 1 means the outbreak always happens\u201d). Participants never see planning \u2014 they experience it."}, {"key": "2", "title": "Time budget", "fate": "masteronly", "mw": 4, "aw": 0, "bw": 0, "note": "A TIME_BUDGET_HOURS dict that asserts the plan fits the 10-hour design limit."}, {"key": "3", "title": "Scientific story", "fate": "simplified", "mw": 223, "aw": 171, "bw": 171, "note": "The story map stays master-only; the S/I/R table, R\u2080 definition, and the two jobs go to both groups verbatim as their shared question."}, {"key": "4", "title": "Environment + \ud83e\udde9 function map", "fate": "simplified", "mw": 266, "aw": 85, "bw": 85, "note": "The master carries the full function map and \ud83e\udded survival guide; groups get the three-tool preflight and a pointer back."}, {"key": "5", "title": "Data provenance", "fate": "masteronly", "mw": 73, "aw": 0, "bw": 0, "note": "Synthetic outbreak, seeded generator, hidden truth R\u2080 = 2.5 \u2014 participants aren't told, so \u201cmeasure it\u201d is a real task."}, {"key": "6", "title": "Inspect the data", "fate": "kept", "mw": 50, "aw": 129, "bw": 129, "note": "The epidemic curve and running total, kept whole in both groups \u2014 plus a \u2705 data checkpoint the master doesn't need."}, {"key": "7", "title": "Method A: the SIR equations", "fate": "split", "mw": 457, "aw": 590, "bw": 0, "note": "The full equation path \u2014 build, first guess, candidate fitting, vaccination cliff \u2014 becomes Group A's core. Group B never sees it (until the joint presentation)."}, {"key": "8", "title": "Method B: the coin-flip model", "fate": "split", "mw": 486, "aw": 0, "bw": 705, "note": "The full stochastic path \u2014 build, run-me-twice, spaghetti, extinction, soft cliff \u2014 becomes Group B's core. Group A never sees it."}, {"key": "9", "title": "Master-only depth: the textbooks", "fate": "masteronly", "mw": 182, "aw": 0, "bw": 0, "note": "The final-size equation, the field shortcut's low bias, and the deterministic-vs-stochastic bridge \u2014 for leads and curious students."}, {"key": "10", "title": "HPC execution", "fate": "masteronly", "mw": 78, "aw": 0, "bw": 0, "note": "Group B's many-simulations design is the array-job pattern; the master says how it scales and keeps the site placeholders."}, {"key": "11", "title": "Group differentiation plan", "fate": "masteronly", "mw": 103, "aw": 0, "bw": 0, "note": "The A-vs-B table with expected R\u2080 values and runtimes \u2014 this IS the split decision."}, {"key": "12", "title": "Variable reference", "fate": "kept", "mw": 164, "aw": 155, "bw": 168, "note": "The names\u2192meanings table survives into both groups, each with its own model's rows added."}, {"key": "13", "title": "Presentation checkpoint", "fate": "expanded", "mw": 71, "aw": 140, "bw": 144, "note": "One master paragraph expands into each group's filled bullet skeleton \u2014 simplification sometimes means adding scaffolding."}, {"key": "14", "title": "Optional deeper material", "fate": "trimmed", "mw": 76, "aw": 64, "bw": 63, "note": "Four master extensions (SEIR, behavior change, waves, the extinction law) trim to three safe ones per group."}, {"key": "15", "title": "Release checklist", "fate": "masteronly", "mw": 124, "aw": 0, "bw": 0, "note": "The readiness review, filled in, with the two site-dependent boxes honestly unchecked."}], "maxw": 486, "totals": {"m": [41, 2998, 216], "a": [25, 1682, 115], "b": [29, 1812, 140]}, "fate": {"masteronly": ["master-only", "#5B6772"], "kept": ["kept", "#2E7C5A"], "simplified": ["simplified", "#33618F"], "split": ["split A / B", "#B3423A"], "expanded": ["expanded", "#7A4E9E"], "trimmed": ["trimmed", "#33618F"]}};
+const t=D.totals;
+document.getElementById("totals").innerHTML=`
+ <div class="tot m"><b>${t.m[0]} cells · ${t.m[1].toLocaleString()} words · ${t.m[2]} code lines</b><span>MASTER (deep dive)</span></div>
+ <div class="tot a"><b>${t.a[0]} cells · ${t.a[1].toLocaleString()} words · ${t.a[2]} code lines</b><span>GROUP A — equations</span></div>
+ <div class="tot b"><b>${t.b[0]} cells · ${t.b[1].toLocaleString()} words · ${t.b[2]} code lines</b><span>GROUP B — coin flips</span></div>`;
+const grid=document.getElementById("grid");
+D.rows.forEach(r=>{
+ const [fl,fc]=D.fate[r.fate];
+ const row=document.createElement("div");row.className="row";row.tabIndex=0;
+ const mb=Math.max(2,100*r.mw/D.maxw);
+ let g="";
+ if(r.aw) g+=`<span class="gl"><span class="bar a" style="width:${Math.max(2,90*r.aw/D.maxw)}%"></span><span class="bw">A: ${r.aw}w</span></span>`;
+ if(r.bw) g+=`<span class="gl"><span class="bar b" style="width:${Math.max(2,90*r.bw/D.maxw)}%"></span><span class="bw">B: ${r.bw}w</span></span>`;
+ if(!g) g=`<span class="absent">— stays in the master</span>`;
+ row.innerHTML=`<div class="sect">${r.title}<small>master §${r.key}</small></div>
+  <div><span class="badge" style="background:${fc}">${fl}</span></div>
+  <div><span class="bar m" style="width:${mb*0.9}%"></span><span class="bw">${r.mw}w</span></div>
+  <div class="gcol">${g}</div>`;
+ const det=document.createElement("div");det.className="detail";det.textContent=r.note;
+ const tg=()=>det.classList.toggle("open");
+ row.onclick=tg;row.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();tg();}};
+ grid.appendChild(row);grid.appendChild(det);
+});
+</script></body></html>
