@@ -39,9 +39,9 @@ simplified group paths.
 ## Quick start (runs anywhere)
 
 ```bash
-cd <participant_work_directory>
-git clone <repository_url>
-cd Intro-to-HPC-Bootcamp-Modeling-Epidemic-Outbreaks
+# from your work directory:
+git clone https://github.com/joserico00/Intro-to-HPC-Modeling-Epidemic-Outbreaks.git
+cd Intro-to-HPC-Modeling-Epidemic-Outbreaks
 
 # conda/mamba:
 conda env create -f environment.yml && conda activate epidemic-modeling
@@ -70,6 +70,19 @@ pattern, and the master's §10 says how it scales.)
 
 Reference figures and metrics live in `expected_outputs/`.
 
+## Checks
+
+The helper module and those reference numbers are covered by offline checks: no
+notebook, no downloads, a couple of seconds.
+
+```bash
+python tests/test_helpers.py
+```
+
+They confirm, among other things, that `data/generate_data.py` still reproduces
+the committed outbreak record exactly and that Group A's fit still lands on the
+reference R₀.
+
 ## Data provenance
 
 The outbreak is synthetic: [`data/generate_data.py`](data/generate_data.py)
@@ -89,3 +102,14 @@ Structure and pedagogy follow the Intro to HPC Bootcamp project-lead guide and
 its sibling projects (regulatory genomics, chaotic-weather forecasting, urban
 air quality): thorough master at the root, simplified Group A/B copies, one ✏️
 edit area, ✅ checkpoints, 📊 variable reference, and a shared final experiment.
+
+## Related
+
+Other Intro to HPC Bootcamp projects:
+- [Intro-to-HPC-Bootcamp-2023-Power-Outages](https://github.com/joserico00/Intro-to-HPC-Bootcamp-2023-Power-Outages)
+- [Intro-to-HPC-Bootcamp-2025-Fusion-Energy-Workloads](https://github.com/joserico00/Intro-to-HPC-Bootcamp-2025-Fusion-Energy-Workloads)
+- [Intro-to-HPC-Bootcamp-Teaching-Students-to-Leverage-LLMs-for-Regulatory-Genomics-on-HPC](https://github.com/joserico00/Intro-to-HPC-Bootcamp-Teaching-Students-to-Leverage-LLMs-for-Regulatory-Genomics-on-HPC)
+
+## Author
+
+Jose E. Rodriguez Rios
