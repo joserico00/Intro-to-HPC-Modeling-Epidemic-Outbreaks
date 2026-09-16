@@ -113,3 +113,9 @@ Other Intro to HPC Bootcamp projects:
 ## Author
 
 Jose E. Rodriguez Rios
+
+## License
+
+The code and written material I created here are MIT licensed — see [LICENSE](LICENSE).
+Material provided by the bootcamp, the datasets it draws on, and anything else authored
+by others remain the property of their authors and are used under their own terms.
